@@ -1,0 +1,37 @@
+
+math_arr = np.array([1,2,3,4])
+
+# add (elementwise)
+print(math_arr + 2)
+
+# sub
+print(math_arr - 2)
+
+# multipy
+print(math_arr * 2)
+
+# division
+print(math_arr / 2)
+
+# exponent
+print(math_arr ** 2)
+
+# two array addition
+print(math_arr + np.array([1,0,1,0]))
+
+# increment/ decrement in array
+math_arr += 2
+print(math_arr)
+
+math_arr -= [2,2,2,2]
+print(math_arr)
+
+# trignometric 
+sine = np.sin(math_arr)
+print(sine)
+
+# elementwise matrix multiplication
+alpha = np.full((3,3),3,dtype='int16') 
+identity = np.identity(3)
+# identity = np.identity(2) # will raise error
+print(alpha* identity)  # notice the elementwise multiplication require same shape
