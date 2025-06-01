@@ -37,3 +37,28 @@ print(g[:,:,1])
 # replace 
 g[:,1,:] = [[4,3],[6,7]]
 print(g)
+
+# concatenation
+x = np.array([1,2,3])
+y = np.array([3,2,1])
+print(np.concatenate((x, y)))
+
+grid = np.array([[1,2,3],
+                [4,5,6]])
+print(np.concatenate(grid,grid))  # or np.concatenate((grid, grid), axis=1)
+
+# split : split the array at specific indices
+x = [1,2,3,99,99,3,2,1]
+x1, x2, x3 = np.split(x, [3,5])
+print(x1, x2, x3)
+
+# vertical split
+upper,middle, lower = np.vsplit(grid, [2,3])
+print("upper: ",upper)
+print("middle: ",middle)
+print("lower: ",lower)
+
+# horizontal split
+left, right = np.hsplit(grid, [2])
+print(left)
+print(right)
