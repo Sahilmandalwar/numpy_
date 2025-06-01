@@ -1,0 +1,39 @@
+import numpy as np
+
+# get a specified element 
+print(c[1,2])
+
+# get a specified element by negative indices
+print(c[-1,-2])
+
+# get a specific row
+print(c[1,:])
+
+# get a specific column
+print(c[:,1])
+
+# get a fancy array 
+print(c[2,0:3:2])
+
+# change at index
+c[0,2] = 9
+print(c)
+
+# change a column to same number
+c[:,3] = 10
+print(c)
+c[:,3] = [12,14,16]
+print(c)
+
+# 3d array
+g = np.array([[[1,2],[3,4]],[[9,8],[7,6]]])
+print(g)
+
+# get element in 3d array
+print(g[0,1,1])
+print(g[:,1,:])
+print(g[:,:,1])
+
+# replace 
+g[:,1,:] = [[4,3],[6,7]]
+print(g)
