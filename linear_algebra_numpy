@@ -1,0 +1,79 @@
+import numpy as np 
+
+# Linear Algebra  : actual matrix multiplication and other operation (promotes non elementwise multiplication)
+
+# matrix_multiplication
+lin_a = np.ones((2,3))
+lin_b = np.full((3,2),2)
+mat_multi = np.matmul(lin_a,lin_b)  # or lin_a @ lin_b  or lin_a.dot(lin_b)
+print(mat_multi)
+print(mat_multi.dtype)
+
+#print(lin_a * lin_b)  # remember not a matrix multiplication
+
+
+# determinant
+identity_mat = np.identity(3)
+det = np.linalg.det(identity_mat)
+print(det)
+
+# transpose
+trans = np.array([[1,2,3,4],[5,6,7,8],[18,16,14,12],[12,14,16,18]])
+print(trans)
+print(trans.T)
+print(np.linalg.det(trans))
+
+# Inverse
+inve = np.linalg.inv(trans)
+print(inve)
+check = np.matmul(inve,trans) # give the value which are very close to identity
+print(check)
+
+# identity
+identity = np.eye(3)  # or np.identity(3)
+print(identity)
+
+# rank
+rank = np.linalg.matrix_rank(trans)
+print(rank)
+
+# trace
+trace = np.trace(trans)
+print(trace)
+
+# dot product
+mat_a = np.array([2,3,4])
+mat_b = np.array([8,4,6])
+prod_dot = np.dot(mat_a,mat_b)
+print(prod_dot)
+
+# cross product
+mat_c = np.array([1,2]) # or [1,2,3]
+mat_d = np.array([3,4]) # or [5,7,3]
+prod_cross = np.cross(mat_c,mat_d)
+print(prod_cross)  # or [-15,12,-3]
+
+# broadcasting
+evy = np.array([[1, 2], [3, 4]])
+mew = np.array([10, 20])
+print(evy + mew)  # intution : like np.array([2,3,4]) + 5 = [7,8,9] 
+                  # broadcasting streches the vector so each vector is added 
+                  # similiar to elementwise addition 
+
+# eigen vector, values
+mat_e = np.array([[4,3],[2,1]])
+eigen_value , eigen_vector = np.linalg.eig(mat_e)
+print("Eigen Value  : " , eigen_value,"\nEigen vector : ", eigen_vector)
+
+# single vector decomposition : decompose a multidimension vector in lower dimension
+deco = np.array([[1,2],[3,4],[5,6]])
+U,S,VT = np.linalg.svd(deco)
+print("U : " , U, "\nS : ", S , "\nVT : ",VT)
+
+# matrix norm 
+mat_x = np.array([[3,4,1,2],[2,3,4,7]]) # or [3,4]
+l2_norm = np.linalg.norm(mat_x)       # euclidean distance
+l1_norm = np.linalg.norm(mat_x,ord=1) # max sum of columns 
+print(l2_norm, l1_norm) # or 5,7
+max_norm = np.linalg.norm(mat_x,ord=np.inf) # vector sum then max among them
+print(max_norm) # or 4
