@@ -30,8 +30,32 @@ print(math_arr)
 sine = np.sin(math_arr)
 print(sine)
 
+# inverse trignometric
+arcsine = np.arcsin(0.5)
+print(arcsine)
+
+# exponent
+exp_raised_to = np.exp(4)
+two_raised_to = np.exp2(4)
+three_raised_to = np.power(3,x)
+
+# logarithm
+log_base_e = np.log(5)
+log_base_10 = np.log10(
+
 # elementwise matrix multiplication
 alpha = np.full((3,3),3,dtype='int16') 
 identity = np.identity(3)
 # identity = np.identity(2) # will raise error
 print(alpha* identity)  # notice the elementwise multiplication require same shape
+
+# absolute value
+x = np.arange(4)
+print(np.absolute(x))
+x = np.array([7-24j,4-3j,2+0j,1+3j])
+print(np.abs(x))
+
+
+# cummulative operation
+print(np.multiply.accumulate(x))
+
