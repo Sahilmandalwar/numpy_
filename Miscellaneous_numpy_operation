@@ -1,0 +1,27 @@
+import numpy as np
+
+# Miscellaneous
+
+# get data from file
+file_data = np.genfromtxt('file.txt',delimiter=',')
+print(file_data.astype('int16'))
+
+# boolean masking and advanced indexing
+print(file_data > 50) # it will form a array of shape file_data each index 
+                      # tell whether the value at index is satisfying condition
+print((file_data > 50) & (file_data < 100)) # or print(~((file_data > 50) & (file_data < 100)))
+                      
+print(file_data[file_data > 50]) # array of all such value which are satisfying condition
+
+# indexing with a list 
+dummy = np.array([1,2,3,4,5,6,7,8,9])
+print(dummy[[1,2,8]])
+
+# masking along axis
+np.any(file_data > 50, axis=0) # within an file_data along axis any value satisfy condition
+
+# task
+task_array = np.array([range(1,6),range(6,11),range(11,16),range(16,21),range(21,26),range(26,31)])
+print(task_array[2:4,0:2])
+print(task_array[[0,1,2,3],[1,2,3,4]])
+print(task_array[[0,4,5],3:])
