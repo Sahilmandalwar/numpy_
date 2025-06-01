@@ -1,0 +1,37 @@
+import numpy as np
+
+# 1-D array
+a = np.array([1,2,3])
+b = np.array([9,8,7])
+
+# 2-D array
+c = np.array([[1,2,3,4],[5,6,7,8],[1,4,7,10]])
+print(c)
+
+# get dimension
+print(a.ndim)
+print(c.ndim)
+
+# get shape
+print(a.shape)   # column
+print(c.shape)   # row x column
+
+# get type
+print(a.dtype)
+print(c.dtype)
+
+# change type
+d = np.array([1,3,5,7,9], dtype='int16')
+print(d.dtype)
+
+e = np.array([2.0, 4.0, 3.0])
+
+
+# get size
+print(d.itemsize)
+print(a.itemsize)
+print(e.itemsize)
+
+# get total size
+print(a.size * a.itemsize)
+print(a.nbytes)
