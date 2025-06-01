@@ -1,0 +1,64 @@
+import numpy as np
+
+# all zero matrix
+z = np.zeros(5)
+print(z)
+
+y = np.zeros((2,3))
+print(y)
+
+x = np.zeros((2,3,3,2), dtype='int8')
+print(x)
+
+# all one matrix
+p = np.ones((2,3,2), dtype='int32')
+print(p)
+
+# any numbers
+q = np.full((2,2), 99, dtype='int16')
+print(q)
+
+m = np.full_like(c,4)
+print(m)
+
+# random decimal numbers
+n = np.random.rand(4,3)
+print(n)
+
+# random decimal numbers of defined shape
+o = np.random.random_sample(c.shape)
+print(o)
+
+# random integer numbers
+r = np.random.randint(7,size=(2,2))
+print(r)
+
+# identity 
+i = np.identity(3)
+print(i)
+
+# repeat element k times
+rp = np.repeat([1,2,3],3)
+print(rp)
+
+print(np.repeat([5,6,2],3))
+
+# repeat the arr , add new row
+arr = [[1,2,3]]  # be careful for the 2-d array
+print(np.repeat(arr,3,axis=0))
+
+# problem (make a array of a pattern)
+pattern = np.ones((5,5),dtype='int8')
+pattern[1:-1,1:-1] = np.zeros((3,3),dtype='int8')
+pattern[2,2] = 9
+print(pattern)
+
+# copying 
+copy_arr = np.array([1,2,3])
+print(copy_arr)
+copy_brr = copy_arr
+print(copy_brr)
+
+copy_brr[0] = 3
+print(copy_brr, copy_arr)   # hence it is a reference , shallow copy: any change will reflect in original
+                            # deep copy: any change will not reflect in original
