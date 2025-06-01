@@ -35,3 +35,9 @@ print(e.itemsize)
 # get total size
 print(a.size * a.itemsize)
 print(a.nbytes)
+
+# creating array with 5 values between 0 and 1 , equispaced
+print(np.linspace(0,1,5))
+
+# similar to range() function
+print(np.arange(0,20,2))
